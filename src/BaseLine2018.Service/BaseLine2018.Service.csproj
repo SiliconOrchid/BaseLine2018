@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BaseLine2018.Common\BaseLine2018.Common.csproj" />
+    <ProjectReference Include="..\BaseLine2018.Data\BaseLine2018.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interface\Sample2Services\" />
+    <Folder Include="Sample2Services\" />
+  </ItemGroup>
+
+</Project>

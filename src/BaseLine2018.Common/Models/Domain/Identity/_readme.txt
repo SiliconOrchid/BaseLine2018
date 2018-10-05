@@ -1,0 +1,1 @@
+﻿This "Identity" folder/namespace is used to store models related to ASP.NET identity.
