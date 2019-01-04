@@ -28,7 +28,7 @@ namespace BaseLine2018.Data
 
             if (isDevelopment)
             {
-                builder.AddUserSecrets<Program>();
+                builder.AddUserSecrets<Program>(); // Note:  Secrets GUID defined in csproj - at time of writing, this "data project" will reuse the secrets file of the "api project" (this is because VS2017 does not have a convenient 'manage usersecrets' option in the context menu for console project types, as it does for web/api project types)
             }
 
             Configuration = builder.Build();

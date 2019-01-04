@@ -12,33 +12,14 @@ namespace BaseLine2018.Data.EntityConfiguration
             // HELP : FluentAPI reference:  http://ef.readthedocs.io/en/latest/modeling/relationships.html
 
             // TIP : ENSURE THAT this configuration is registered in "Context/IMCIntegrationDBContext/OnModelCreating"
-
+            // TIP : EF Configuration is partly done in the "BaseEntity" (which is purpose of 'BaseEntityConfiguration.SetUp ...' below) - be aware that fields like the primary key and other common fields are configured there and not in this file.
 
             modelBuilder.Entity<SampleEntity>(b =>
             {
-                b.ToTable("Sample", "WebApp");  // define the sql namespace and tablename (which may be different to the poco classname)
-              
+                modelBuilder = BaseEntityConfiguration.SetUp<SampleEntity>(modelBuilder, "Sample", "WebApp");
 
-                #region ---- Entity Relationships  ----               
-
-                b.HasKey(c => c.Id);
-
-                #endregion
-
-                #region ---- Entity Baseclass properties   ----    
-
-                b.Property(c => c.Created)
-                    .IsRequired();
-
-                b.Property(c => c.Modified)
-                    .IsRequired();
-
-                #endregion
 
                 #region ---- Entity Main Properties  ----   
-                b.Property(c => c.Id)
-                    .IsRequired();
-
                 b.Property(c => c.SampleLookupField)
                     .IsRequired();
 
